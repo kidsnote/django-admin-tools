@@ -18,3 +18,4 @@ _static
 .tox
 .venv
 *.sqlite
+.idea
