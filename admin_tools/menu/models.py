@@ -18,7 +18,7 @@ class Bookmark(models.Model):
     """
     This model represents a user created bookmark.
     """
-    user = models.ForeignKey(user_model, on_delete=models.CASCADE)
+    user = models.ForeignKey(user_model, on_delete=models.CASCADE, db_constraint=False)
     url = models.CharField(max_length=255)
     title = models.CharField(max_length=255)
 
