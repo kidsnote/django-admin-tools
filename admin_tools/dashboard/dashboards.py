@@ -198,7 +198,10 @@ class AppIndexDashboard(Dashboard):
         for m in self.models:
             mod, cls = m.rsplit('.', 1)
             mod = import_module(mod)
-            models.append(getattr(mod, cls))
+            try:
+                models.append(getattr(mod, cls))
+            except AttributeError:
+                pass
         return models
 
     def get_app_content_types(self):
